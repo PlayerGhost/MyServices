@@ -117,11 +117,6 @@ export class ProfissionaisComponent implements OnInit {
   formReset() {
     this.form.reset()
     this.categoria.setValue("Escolher categoria...")
-    /*this.categoria.setValue(0)
-    this.pergunta0.setValue(0)
-    this.pergunta1.setValue(0)
-    this.pergunta0.reset()
-    this.pergunta1.setValue(0)*/
   }
 
   getPerguntaIdIndex(pergunta) {

@@ -10,7 +10,9 @@ const app = express()
 app.use(bodyParser.json({ limit: '10mb', extended: true }))
 app.use(bodyParser.urlencoded({ limit: '10mb', extended: true }))
 app.use(cors())
-
+    /*app.set('port', (process.env.PORT || 3000));
+    app.use(express.static(__dirname + '/public'));
+    var port = process.env.PORT || 8080;*/
 app.listen(3000)
 
 var config = {
@@ -25,6 +27,10 @@ var config = {
 };
 
 firebase.initializeApp(config);
+
+app.get('/', function(request, response) {
+    response.send('Hello World!');
+});
 
 app.get("/users", (req, res) => {
     let userReference = firebase.database().ref("/users/")
